@@ -86,6 +86,13 @@ abstract class AbstractAnnotation implements JsonSerializable
     public static $_blacklist = ['_context', '_unmerged'];
 
     /**
+     * Whether this annotation can be replaced by a primitive type
+     *
+     * @var string|null
+     */
+    public static $_variadicType = null;
+
+    /**
      * @param array $properties
      */
     public function __construct($properties)
