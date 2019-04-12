@@ -32,4 +32,9 @@ class AdditionalProperties extends Schema
         ExternalDocumentation::class => 'externalDocs',
         Xml::class => 'xml',
     ];
+
+    /**
+     * @inheritDoc
+     */
+    public static $_variadicType = 'boolean';
 }

@@ -155,6 +155,9 @@ class Serializer
         foreach ($annotation::$_nested as $class => $declaration) {
             // property is an annotation
             if (is_string($declaration) && $declaration === $property) {
+                if ($class::$_variadicType !== null && gettype($value) === $class::$_variadicType) {
+                    return $value;
+                }
                 return $this->doDeserialize($value, $class);
             }
 
